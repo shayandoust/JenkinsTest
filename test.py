@@ -31,7 +31,7 @@ hints = ["You experience this during a car accident",
 
 def hangman_graphics(guesses):
     if guesses == 0:
-        return print ("""
+        print ("""
                 ________
                 |      |
                 |
@@ -41,7 +41,7 @@ def hangman_graphics(guesses):
 `       """)
 
     elif guesses == 1:
-        return print ("""
+        print ("""
                 ________
                 |      |
                 |      0
@@ -52,7 +52,7 @@ def hangman_graphics(guesses):
         """)
 
     elif guesses == 2:
-        return print ("""
+         print ("""
                 ________
                 |      |
                 |      0
@@ -63,7 +63,7 @@ def hangman_graphics(guesses):
         """)
 
     elif guesses == 3:
-        return print ("""
+        print ("""
                 ________
                 |      |
                 |      0
@@ -76,7 +76,7 @@ def hangman_graphics(guesses):
 
 
     elif guesses == 4:
-        return print ("""
+        print ("""
                 ________
                 |      |
                 |      0
@@ -86,7 +86,7 @@ def hangman_graphics(guesses):
         """)
 
     elif guesses == 5:
-        return print("""
+        print("""
                 ________
                 |      |
                 |      0
@@ -97,7 +97,7 @@ def hangman_graphics(guesses):
         """)
 
     else:
-        return print("""
+        print("""
                 ________
                 |      |
                 |      0
