@@ -1,0 +1,9 @@
+C:\Mock Class web page\C# projects\Example\MockClass.Tests\MockClass.Tests\bin\Debug\MockClass.Tests.dll
+C:\Mock Class web page\C# projects\Example\MockClass.Tests\MockClass.Tests\bin\Debug\MockClass.Tests.pdb
+C:\Mock Class web page\C# projects\Example\MockClass.Tests\MockClass.Tests\obj\Debug\ResolveAssemblyReference.cache
+C:\Mock Class web page\C# projects\Example\MockClass.Tests\MockClass.Tests\obj\Debug\MockClass.Tests.dll
+C:\Mock Class web page\C# projects\Example\MockClass.Tests\MockClass.Tests\obj\Debug\MockClass.Tests.pdb
+C:\Mock Class web page\C# projects\Example\MockClass.Tests\MockClass.Tests\bin\Debug\ClassLibrary.dll
+C:\Mock Class web page\C# projects\Example\MockClass.Tests\MockClass.Tests\bin\Debug\ClassLibrary.pdb
+C:\Mock Class web page\C# projects\Example\MockClass.Tests\MockClass.Tests\bin\Debug\ClassLibrary.Moles.dll
+C:\Mock Class web page\C# projects\Example\MockClass.Tests\MockClass.Tests\bin\Debug\ClassLibrary.Moles.xml

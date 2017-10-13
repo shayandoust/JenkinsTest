@@ -1,0 +1,115 @@
+﻿<documents created="2011-10-21 23:43:03Z"><document src="C:\Mock Class web page\C# projects\Example\MockClass.Tests\MockClass.Tests\Example_Test.cs" renderPrefix="s0"><chunk hits="-1" domain="unknown"><source><![CDATA[using System;
+using System.Text;
+using System.Collections.Generic;
+using System.Linq;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Microsoft.Pex.Framework;
+using Microsoft.Pex.Framework.Using;
+using ClassLibrary;
+using ClassLibrary.Moles;
+
+
+namespace MockClass.Tests
+{
+    [PexClass]
+    [TestClass]
+    public partial class Example_Test
+    {
+        [PexMethod]
+        [PexAssertReachEventually(0, 1, 2)]
+        [PexUseType(typeof(SI)), PexUseType(typeof(SJ)), PexUseType(typeof(SA))]
+        [PexUseType(typeof(MA))]
+        
+        public void foo(I i)
+        ]]></source>
+</chunk>
+<method name="foo" namespace="MockClass.Tests" type="MockClass.Tests.Example_Test" typeName="Example_Test" token="6000001" module="MockClass.Tests.dll"><hits><hit index="0" value="1"/>
+<hit index="1" value="1"/>
+<hit index="2" value="1"/>
+<hit index="11" value="1"/>
+<hit index="12" value="1"/>
+<hit index="13" value="1"/>
+<hit index="14" value="2"/>
+<hit index="15" value="1"/>
+<hit index="16" value="1"/>
+<hit index="17" value="1"/>
+<hit index="18" value="2"/>
+<hit index="19" value="1"/>
+<hit index="20" value="1"/>
+<hit index="28" value="1"/>
+<hit index="29" value="1"/>
+<hit index="30" value="1"/>
+</hits>
+<coverage domain="userortestcode" unit="block" covered="6" total="12" coveredRatio="0.5"/>
+</method>
+<chunk hits="1" offset="0000" domain="userortestcode"><source><![CDATA[{]]></source>
+</chunk>
+<chunk hits="-1" domain="unknown"><source><![CDATA[
+            //i.m1();
+            ]]></source>
+</chunk>
+<chunk hits="1" offset="0001" domain="userortestcode"><source><![CDATA[PexAssert.ReachEventually(0);]]></source>
+</chunk>
+<chunk hits="-1" domain="unknown"><source><![CDATA[
+            //throw new Exception("0");
+
+            ]]></source>
+</chunk>
+<chunk hits="1" offset="0008" domain="userortestcode"><source><![CDATA[if (i is J)]]></source>
+</chunk>
+<chunk hits="-1" domain="unknown"><source><![CDATA[
+            ]]></source>
+</chunk>
+<chunk hits="0" offset="0018" domain="userortestcode"><source><![CDATA[{]]></source>
+</chunk>
+<chunk hits="-1" domain="unknown"><source><![CDATA[
+                ]]></source>
+</chunk>
+<chunk hits="0" offset="0019" domain="userortestcode"><source><![CDATA[J j = (J)i;]]></source>
+</chunk>
+<chunk hits="-1" domain="unknown"><source><![CDATA[
+                //j.m2();
+                ]]></source>
+</chunk>
+<chunk hits="0" offset="0020" domain="userortestcode"><source><![CDATA[PexAssert.ReachEventually(1);]]></source>
+</chunk>
+<chunk hits="-1" domain="unknown"><source><![CDATA[
+                ]]></source>
+</chunk>
+<chunk hits="0" offset="0027" domain="userortestcode"><source><![CDATA[throw new Exception("1");]]></source>
+</chunk>
+<chunk hits="-1" domain="unknown"><source><![CDATA[
+            }
+
+            ]]></source>
+</chunk>
+<chunk hits="1" offset="0032" domain="userortestcode"><source><![CDATA[if (i.GetType().GetCustomAttributes(true)[0] is A)]]></source>
+</chunk>
+<chunk hits="-1" domain="unknown"><source><![CDATA[
+            ]]></source>
+</chunk>
+<chunk hits="0" offset="004f" domain="userortestcode"><source><![CDATA[{]]></source>
+</chunk>
+<chunk hits="-1" domain="unknown"><source><![CDATA[
+                ]]></source>
+</chunk>
+<chunk hits="0" offset="0050" domain="userortestcode"><source><![CDATA[PexAssert.ReachEventually(2);]]></source>
+</chunk>
+<chunk hits="-1" domain="unknown"><source><![CDATA[
+                ]]></source>
+</chunk>
+<chunk hits="0" offset="0057" domain="userortestcode"><source><![CDATA[throw new Exception("2");]]></source>
+</chunk>
+<chunk hits="-1" domain="unknown"><source><![CDATA[
+            }
+        ]]></source>
+</chunk>
+<chunk hits="1" offset="0062" domain="userortestcode"><source><![CDATA[}]]></source>
+</chunk>
+<chunk hits="-1" domain="unknown"><source><![CDATA[
+    }
+}
+]]></source>
+</chunk>
+</document>
+</documents>

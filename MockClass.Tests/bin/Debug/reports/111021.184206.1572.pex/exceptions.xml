@@ -1,0 +1,23 @@
+﻿<frameTree version="0.94.51006.1"><frameException type="System.NullReferenceException"><tag exceptionState="unexpected"><generatedTestRef idref="05cc565a-0841-46d9-96b6-966705016ad1"/>
+</tag>
+<frameNode><frame value="  at Example_Test.foo(I) in C:\Mock Class web page\C# projects\Example\MockClass.Tests\MockClass.Tests\Example_Test.cs(36)" method="Example_Test.foo(I)" offset="41" file="C:\Mock Class web page\C# projects\Example\MockClass.Tests\MockClass.Tests\Example_Test.cs" line="36"><method assemblyName="MockClass.Tests" name="foo" token="6000001"><declaringType assemblyName="MockClass.Tests" name="Example_Test" token="2000002" namespace="MockClass.Tests"/>
+<parameter this="true" name="this" position="0"><type spec="Class"><definition assemblyName="MockClass.Tests" name="Example_Test" token="2000002" namespace="MockClass.Tests"/>
+</type>
+</parameter>
+<parameter name="i" position="1"><type spec="Class"><definition assemblyName="ClassLibrary" name="I" token="2000003" namespace="ClassLibrary"/>
+</type>
+</parameter>
+</method>
+<beforeSource><![CDATA[                //throw new Exception("1");
+            }
+]]></beforeSource>
+<source><![CDATA[            if (i.GetType().GetCustomAttributes(true)[0] is A)]]></source>
+<afterSource><![CDATA[            {
+                PexAssert.ReachEventually(2);
+                //throw new Exception("2");]]></afterSource>
+</frame>
+<tag exceptionState="unexpected"><generatedTestRef idref="05cc565a-0841-46d9-96b6-966705016ad1"/>
+</tag>
+</frameNode>
+</frameException>
+</frameTree>
