@@ -91,14 +91,14 @@ def game():
     zombieThread = zombieThreadOverTime(2, "zombieThreadOverTime", 2)
     hydrationThread.start()
     zombieThread.start()
-    usr_command = sys.argv[1] + sys.argv[2]
+    usr_command = sys.argv[1] + " " + sys.argv[2]
     while True:
         showMap()
         global currentRoom
         try:
             usr_command = input("Enter a command: ").lower().split()
         except(EOFError):
-            usr_command = sys.argv[1] + sys.argv[2]
+            usr_command = sys.argv[1] + " " + sys.argv[2]
             showMap()
         print(usr_command)
 
