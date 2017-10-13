@@ -99,7 +99,7 @@ def game():
             usr_command = input("Enter a command: ").lower().split()
         except(EOFError):
             #usr_command = sys.argv[1] + " " + sys.argv[2]
-            exit 0
+            exit(0)
             showMap()
         print(usr_command)
 
@@ -221,3 +221,4 @@ def showMap():
         if rooms[currentRoom]["item"] == "Water Bottle":
             hydrationUpdate("+",50)
 showInstructions()
+exit(0)
