@@ -1,5 +1,0 @@
-C:\Mock Class web page\C# projects\Example\MockClass.Tests\ClassLibrary\bin\Debug\ClassLibrary.dll
-C:\Mock Class web page\C# projects\Example\MockClass.Tests\ClassLibrary\bin\Debug\ClassLibrary.pdb
-C:\Mock Class web page\C# projects\Example\MockClass.Tests\ClassLibrary\obj\Debug\ResolveAssemblyReference.cache
-C:\Mock Class web page\C# projects\Example\MockClass.Tests\ClassLibrary\obj\Debug\ClassLibrary.dll
-C:\Mock Class web page\C# projects\Example\MockClass.Tests\ClassLibrary\obj\Debug\ClassLibrary.pdb
