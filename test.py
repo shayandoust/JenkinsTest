@@ -91,13 +91,15 @@ def game():
     zombieThread = zombieThreadOverTime(2, "zombieThreadOverTime", 2)
     hydrationThread.start()
     zombieThread.start()
+    usr_command = str(sys.argv)
     while True:
         showMap()
         global currentRoom
         try:
             usr_command = input("Enter a command: ").lower().split()
         except(EOFError):
-            break
+            usr_command = str(sys.argv)
+            showMap()
         print(usr_command)
 
         if usr_command[0] == "go":
