@@ -1,165 +1,69 @@
-# SHAYAN DOUST
-# HANGMAN
+import sys
 
-#                                                                 LAST LESSON: STILL DOESNT FUNCTION CORRECTLY
+class progressBar:
+    """ Builds and display a text-based progress bar. """
 
-import time
-import random
-import os
+    def __init__(self, minValue = 0, maxValue = 100, totalWidth=75):
+        """ Initializes the progress bar. """
+        self.progBar = ""   # This holds the progress bar string
+        self.oldprogBar = ""
+        self.min = minValue
+        self.max = maxValue
+        self.span = maxValue - minValue
+        self.width = totalWidth
+        self.amount = 0       # When amount == max, we are 100% done
+        self.updateAmount(0)  # Build progress bar string
 
-#Python via CMD doesn't like global vars. :(
-global timer
-global countdown
-guesses = 1
-countdown = 4
+    def appendAmount(self, append):
+        """ Increases the current amount of the value of append and
+        updates the progress bar to new ammount. """
+        self.updateAmount(self.amount + append)
 
-#str() otherwise .center() attribute doesn't function :(
-global words
-global hints
-words = ["whiplash",
-"blueprint",
-"clap",
-"capitalism",
-"brainstorm"]
-hints = ["You experience this during a car accident",
-"Layout for designing a building",
-"Sign of respect usually done for congratulations or speech",
-"Industry that is controlled by private owners",
-"Share ideas"
-]
+    def updatePercentage(self, newPercentage):
+        """ Updates the progress bar to the new percentage. """
+        self.updateAmount((newPercentage * float(self.max)) / 100.0)
 
+    def updateAmount(self, newAmount = 0):
+        """ Update the progress bar with the new amount (with min and max
+        values set at initialization; if it is over or under, it takes the
+        min or max value as a default. """
+        if newAmount < self.min: newAmount = self.min
+        if newAmount > self.max: newAmount = self.max
+        self.amount = newAmount
 
-def hangman_graphics(guesses):
-    if guesses == 0:
-        return print ("""
-                ________
-                |      |
-                |
-                |
-		        |
-		        |
-`       """)
+        # Figure out the new percent done, round to an integer
+        diffFromMin = float(self.amount - self.min)
+        percentDone = (diffFromMin / float(self.span)) * 100.0
+        percentDone = int(round(percentDone))
 
-    elif guesses == 1:
-        return print ("""
-                ________
-                |      |
-                |      0
-                |
-                |
-                |
+        # Figure out how many hash bars the percentage should be
+        allFull = self.width - 2
+        numHashes = (percentDone / 100.0) * allFull
+        numHashes = int(round(numHashes))
 
-        """)
-
-    elif guesses == 2:
-        return print ("""
-                ________
-                |      |
-                |      0
-                |     /
-                |
-                |
-
-        """)
-
-    elif guesses == 3:
-        return print ("""
-                ________
-                |      |
-                |      0
-                |     /|
-                |
-                |
-                Be careful, your fate is getting ever so closer.
-
-        """)
-
-
-    elif guesses == 4:
-        return print ("""
-                ________
-                |      |
-                |      0
-                |     /|\
-                |
-                |
-        """)
-
-    elif guesses == 5:
-        return print("""
-                ________
-                |      |
-                |      0
-                |     /|\
-                |     /
-                |
-
-        """)
-
-    else:
-        return print("""
-                ________
-                |      |
-                |      0
-                |     /|\
-                |     / \
-                |
-
-              The noose tightens around your neck, and you fell the sudden
-              urge to urinate.
-
-                   GAME OVER!
-            """)
-
-
-def game():
-    gameActive = 1
-    global guesses
-    global words
-    global hints
-    chosenIndex = random.randint(0,4)
-    chosenWord = words[chosenIndex]
-
-    while(gameActive):
-        while guesses != 0:
-            usr_input = input("Please enter a word or a letter, or type help: ")
-            usr_input.lower()
-            if usr_input == "help":
-                print("Here is a hint:\n",hints[chosenIndex],"\n")
-            else:
-
-
+        # Build a progress bar with an arrow of equal signs; special cases for
+        # empty and full
+        if numHashes == 0:
+            self.progBar = "[>%s]" % (' '*(allFull-1))
+        elif numHashes == allFull:
+            self.progBar = "[%s]" % ('='*allFull)
         else:
-            print("The game is over :(")
-            break
-    else:
-        print("Something unexpected happened :(")
+            self.progBar = "[%s>%s]" % ('='*(numHashes-1), ' '*(allFull-numHashes))
 
+        # figure out where to put the percentage, roughly centered
+        percentPlace = (len(self.progBar) / 2) - len(str(percentDone))
+        percentString = str(percentDone) + "%"
 
-def menu():
-    global countdown
-    if countdown > 0:
-        print("""
-    _____________________________________________
+        # slice the percentage into the bar
+        self.progBar = ' '.join([self.progBar, percentString])
 
+    def draw(self):
+        """ Draws the progress bar if it has changed from it's previous value.  """
+        if self.progBar != self.oldprogBar:
+            self.oldprogBar = self.progBar
+            sys.stdout.write(self.progBar + '\r')
+            sys.stdout.flush()      # force updating of screen
 
-                HANGMAN BY SHAYAN
-            Please follow the instructions.
-
-        Continuing in:""")
-        global countdown
-        print(countdown)
-        print("\n")
-        time.sleep(1)
-        countdown -= 1
-        menu()
-    else:
-        game()
-
-
-
-#Start the nested functions correctly
-menu()
-#Wait for 1 minute once the program finishes & inform user of termination
-print("Program terminated.")
-time.sleep(60)
+    def __str__(self):
+        """ Returns the current progress bar. """
+        return str(self.progBar)
