@@ -94,7 +94,10 @@ def game():
     while True:
         showMap()
         global currentRoom
-        usr_command = input("Enter a command: ").lower().split()
+        try:
+            usr_command = input("Enter a command: ").lower().split()
+        except(EOFError):
+            break
         print(usr_command)
 
         if usr_command[0] == "go":
